@@ -9,7 +9,7 @@
 
 $to = [
     'j.conan@fondationface.org',
-    ...
+    'vanessa.nectoux@gmail.com'
 ];
 
 $html = '
@@ -19,9 +19,16 @@ $html = '
         </head>
         <body>
             <div>
-                <!-- Vos actualités ici -->
+                "Bonjour et bienvenue dans notre Newsletter... vide."
             </div>
         </body>
     </html>
 ';
 
+ foreach ($to as $value) {
+        if (mail($value, 'news', $html,)) {
+            echo "Email envoyé avec succès <br>";
+        } else {
+            echo "Échec de l'envoi de l'email <br>";
+        }
+    }
